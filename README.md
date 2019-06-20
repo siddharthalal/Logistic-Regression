@@ -7,14 +7,23 @@ The dataset I chose is the affairs dataset that comes with Statsmodels. It was d
 The dataset contains 6366 observations of 9 variables:
 
 rate_marriage: woman's rating of her marriage (1 = very poor, 5 = very good)
+
 age: woman's age
+
 yrs_married: number of years married
+
 children: number of children
+
 religious: woman's rating of how religious she is (1 = not religious, 4 = strongly religious)
+
 educ: level of education (9 = grade school, 12 = high school, 14 = some college, 16 =
+
 college graduate, 17 = some graduate school, 20 = advanced degree
+
 occupation: woman's occupation (1 = student, 2 = farming/semi-skilled/unskilled, 3 = "white collar", 4 = teacher/nurse/writer/technician/skilled, 5 = managerial/business, 6 = professional with advanced degree)
+
 occupation_husb: husband's occupation (same coding as above)
+
 affairs: time spent in extra-marital affairs
 
 ### Code to loading data and modules:
@@ -30,7 +39,7 @@ affairs: time spent in extra-marital affairs
     from sklearn.cross_validation import cross_val_score
     dta = sm.datasets.fair.load_pandas().data
 
-# add "affair" column: 1 represents having affairs, 0 represents not
+### add "affair" column: 1 represents having affairs, 0 represents not
 
     dta['affair'] = (dta.affairs > 0).astype(int)
     y, X = dmatrices('affair ~ rate_marriage + age + yrs_married + children + \
